@@ -16,7 +16,7 @@
             <div class="card-card-body">
                 <form action="guardar.php" method ="POST">
                     <div class="form-group">
-                        <input type="text" name="nombre_libro" class="form-control" placeholder="Nombre" autofocus>
+                        <input type="text" name="nombre_libro" class="form-control" placeholder="Nombre del libro" autofocus>
                     </div>
                     <div class="form-group">
                         <input type="text" name="autor_libro" class="form-control" placeholder="Autor" autofocus>
