@@ -1,4 +1,5 @@
 <?PHP
+session_start();
 include("db.php");
 if (isset($_POST['guardarl'])){
     $nombre = $_POST['nombre_libro'];

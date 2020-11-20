@@ -22,6 +22,8 @@ if (isset($_POST['cedula']) && isset($_POST['contrasena'])) {
                 $_SESSION['cedula'] = $row['cedula'];
                 $_SESSION['contrasena'] = $row['contrasena'];
                 $_SESSION['id'] = $row['id'];
+                $_SESSION['message'] = 'Bienvenido';
+                $_SESSION['message_type'] = 'success';
                 header("Location: index.php");
             }else{
 				header("Location: uindex.php?error=Incorect User name or password");
