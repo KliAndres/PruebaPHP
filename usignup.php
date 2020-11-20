@@ -1,8 +1,16 @@
 <?php
 include("db.php");
   if (!empty($_POST['cedula']) && !empty($_POST['contrasena'])) {
-    $cedula = $_POST['cedula'];
-    $contrasena = $_POST['contrasena'];
+
+    function validar($data){
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+
+    $cedula = validar($_POST['cedula']);
+    $contrasena = validar($_POST['contrasena']);
 
     $query = "INSERT INTO users (`cedula`, `contrasena`) VALUES ('$cedula', '$contrasena')";
     $result = mysqli_query($conn, $query);
@@ -13,7 +21,7 @@ include("db.php");
 
     $_SESSION['message'] = 'Registrado Exitosamente';
     $_SESSION['message_type'] = 'success';
-    header("Location: ulogin.php");
+    header("Location: index.php");
   }
 ?>
 
@@ -30,7 +38,6 @@ include("db.php");
     <form action="usignup.php" method="POST">
       <input name="cedula" type="text" placeholder="Ingrese su cedula">
       <input name="contrasena" type="password" placeholder="Ingrese su contraseña">
-      <input name="confirm_password" type="password" placeholder="Confirme su contraseña">
       <input type="submit" value="Enviar">
     </form>
 

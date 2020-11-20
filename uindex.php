@@ -1,16 +1,18 @@
 <?php include("includes/header.php") ?>
 
-    <?php if(!empty($user)): ?>
-      <br> Bienvenido. <?= $user['email']; ?>
-      <br>You are Successfully Logged In
-      <a href="logout.php">
-        Cerrar Sesion
-      </a>
-    <?php else: ?>
-      <h1>INICIO DE SESIÓN</h1>
+<body>
+     <form action="ulogin.php" method="post">
+     	<h2>LOGIN</h2>
+     	<?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_GET['error']; ?></p>
+     	<?php } ?>
+     	<input type="text" name="cedula" placeholder="Ingrese su cedula"><br>
 
-      <a href="ulogin.php">Iniciar Sesión</a> or
-      <a href="usignup.php">Registrarse</a>
-    <?php endif; ?>
+     	<input type="password" name="contrasena" placeholder="Ingrese su contraseña"><br>
+
+       <a href="usignup.php">Registrarse</a>
+     	
+       <button type="submit">Iniciar</button>
+     </form>
 
 <?php include ("includes/footer.php") ?>
