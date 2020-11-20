@@ -29,6 +29,7 @@
         </div>
 
         <div class="col-md-8">
+        <a href="ulogout.php">Cerrar Sesión</a>
                 <table class="table table-bordered">
                     <thead>
                     <tr>
