@@ -26,10 +26,14 @@ if (isset($_POST['cedula']) && isset($_POST['contrasena'])) {
                 $_SESSION['message_type'] = 'success';
                 header("Location: index.php");
             }else{
+                $_SESSION['message'] = 'Revise sus credenciales';
+                $_SESSION['message_type'] = 'alert';
 				header("Location: uindex.php?error=Incorect User name or password");
 		        exit();
 			}
 		}else{
+            $_SESSION['message'] = 'Revise sus credenciales';
+            $_SESSION['message_type'] = 'alert';
 			header("Location: uindex.php?error=Incorect User name or password");
 	        exit();
         }
